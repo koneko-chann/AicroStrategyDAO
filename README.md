@@ -6,6 +6,8 @@
 
 ###
 
+<h2 align="left">aicrostrategy.com</h2>
+
 <p align="left">AicroStrategy ($AiSTR) revolutionizes investment through autonomous AI agents, delivering unparalleled trading strategies on Base.</p>
 
 ###
