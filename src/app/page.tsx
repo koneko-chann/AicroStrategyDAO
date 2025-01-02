@@ -6,7 +6,7 @@ import StrategySection from '@/components/home/strategy-section'
 
 export default function Home() {
   return (
-    <main className="flex-1 pt-24">
+    <main>
       <HeroSection />
 
       {/* Features Section */}
