@@ -1,31 +1,31 @@
 'use client'
 
+import { ChevronRight, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+
+import { AnimatedSection } from '@/components/animated-section'
+import { GradientText } from '@/components/gradient-text'
+import { LoadingScreen } from '@/components/loading-screen'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { ChevronRight, ArrowRight } from 'lucide-react'
-import { AnimatedSection } from '@/components/animated-section'
-import { useState, useEffect } from 'react'
-import { GradientText } from '@/components/gradient-text'
-import { HoverCard } from '@/components/hover-card'
-import { LoadingScreen } from '@/components/loading-screen'
 
 export default function Home() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
 
-    window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener('mousemove', updateMousePosition)
 
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-    };
-  }, []);
+      window.removeEventListener('mousemove', updateMousePosition)
+    }
+  }, [])
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -50,27 +50,33 @@ export default function Home() {
       />
 
       {/* Header - Floating style */}
-      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
-        <div className="backdrop-blur-md bg-white/70 rounded-full border px-6 py-3">
+      <header className="fixed left-1/2 top-4 z-50 w-[95%] max-w-7xl -translate-x-1/2">
+        <div className="rounded-full border bg-white/70 px-6 py-3 backdrop-blur-md">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2">
               <Image src="/aicrostrategy.png" alt="AicroStrategy Logo" width={160} height={32} />
             </Link>
             <nav className="flex items-center gap-8">
-              <Link href="https://dexscreener.com/base/0x197ecb5c176ad4f6e77894913a94c5145416f148"
+              <Link
+                href="https://dexscreener.com/base/0x197ecb5c176ad4f6e77894913a94c5145416f148"
                 className="text-sm font-medium transition-colors hover:text-primary"
-                target="_blank">
+                target="_blank"
+              >
                 DexScreener
               </Link>
-              <Link href="https://t.me/aicrostrategy_dao"
+              <Link
+                href="https://t.me/aicrostrategy_dao"
                 className="text-sm font-medium transition-colors hover:text-primary"
-                target="_blank">
+                target="_blank"
+              >
                 Telegram
               </Link>
 
-              <Link href="https://x.com/AicroStrategy"
+              <Link
+                href="https://x.com/AicroStrategy"
                 className="text-sm font-medium transition-colors hover:text-primary"
-                target="_blank">
+                target="_blank"
+              >
                 Twitter
               </Link>
             </nav>
@@ -80,11 +86,11 @@ export default function Home() {
 
       <main className="flex-1 pt-24">
         {/* Hero Section */}
-        <AnimatedSection className="relative min-h-[90vh] flex items-center bg-white">
+        <AnimatedSection className="relative flex min-h-[90vh] items-center bg-white">
           <div className="container relative z-10 mx-auto max-w-7xl px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid items-center gap-16 lg:grid-cols-2">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-secondary/30 blur-3xl opacity-20 rounded-full" />
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary/30 to-secondary/30 opacity-20 blur-3xl" />
                 <Image
                   src="/aistr.jpeg"
                   alt="AI Trading"
@@ -97,46 +103,27 @@ export default function Home() {
               <div className="space-y-6">
                 <Badge
                   variant="outline"
-                  className="rounded-full px-4 py-1 flex items-center gap-2 w-fit border-gray-100"
+                  className="flex w-fit items-center gap-2 rounded-full border-gray-100 px-4 py-1"
                 >
-                  <Image
-                    src="/daos.png"
-                    alt="DAOS"
-                    width={14}
-                    height={14}
-                  />
+                  <Image src="/daos.png" alt="DAOS" width={14} height={14} />
                   Built on daos.world
                 </Badge>
-                <h1 className="text-5xl sm:text-6xl font-bold tracking-tight leading-[1.1] mt-8">
+                <h1 className="mt-8 text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl">
                   <GradientText>AI-Powered Investment Strategy</GradientText>
                 </h1>
-                <p className="text-lg text-muted-foreground max-w-[90%] mt-6">
-                  AicroStrategy ($AiSTR) revolutionizes investment through autonomous AI agents, delivering unparalleled trading strategies on Base.
+                <p className="mt-6 max-w-[90%] text-lg text-muted-foreground">
+                  AicroStrategy ($AiSTR) revolutionizes investment through autonomous AI agents, delivering unparalleled
+                  trading strategies on Base.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
-                  <Button
-                    size="lg"
-                    className="rounded-full"
-                    asChild
-                  >
-                    <Link
-                      href="https://daos.world/fund/0xddc23d34ea2f6920d15995607d00def9478ded6d"
-                      target="_blank"
-                    >
+                  <Button size="lg" className="rounded-full" asChild>
+                    <Link href="https://daos.world/fund/0xddc23d34ea2f6920d15995607d00def9478ded6d" target="_blank">
                       Buy $AiSTR
                       <ArrowRight className="ml-2" />
                     </Link>
                   </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="rounded-full"
-                    asChild
-                  >
-                    <Link
-                      href="https://debank.com/profile/0xddc23d34ea2f6920d15995607d00def9478ded6d"
-                      target="_blank"
-                    >
+                  <Button size="lg" variant="outline" className="rounded-full" asChild>
+                    <Link href="https://debank.com/profile/0xddc23d34ea2f6920d15995607d00def9478ded6d" target="_blank">
                       Portfolio
                       <ChevronRight className="ml-2" />
                     </Link>
@@ -147,12 +134,12 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-
         {/* Features Section */}
-        <AnimatedSection className="py-24 bg-white">
+        <AnimatedSection className="bg-white py-24">
           <div className="container mx-auto max-w-7xl px-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12">
-              <GradientText>Core Features</GradientText></h2>
+            <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <GradientText>Core Features</GradientText>
+            </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               <Card className="p-6">
                 <h3 className="text-xl font-bold">AI-Powered Strategies</h3>
@@ -162,9 +149,7 @@ export default function Home() {
               </Card>
               <Card className="p-6">
                 <h3 className="text-xl font-bold">Strategic Accumulation</h3>
-                <p className="mt-2 text-muted-foreground">
-                  Systematic approach to growing our treasury with cbBTC.
-                </p>
+                <p className="mt-2 text-muted-foreground">Systematic approach to growing our treasury with cbBTC.</p>
               </Card>
               <Card className="p-6">
                 <h3 className="text-xl font-bold">Risk Management</h3>
@@ -177,7 +162,7 @@ export default function Home() {
         </AnimatedSection>
 
         {/* Strategy Section */}
-        <AnimatedSection className="py-24 border-t">
+        <AnimatedSection className="border-t py-24">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               <GradientText>Our Strategy</GradientText>
@@ -206,7 +191,8 @@ export default function Home() {
                     <div>
                       <h4 className="font-semibold">AI Infrastructure</h4>
                       <p className="text-muted-foreground">
-                        Built on cutting-edge AI infrastructure to optimize trading strategies and market analysis in real-time
+                        Built on cutting-edge AI infrastructure to optimize trading strategies and market analysis in
+                        real-time
                       </p>
                     </div>
                   </div>
@@ -215,9 +201,7 @@ export default function Home() {
 
               <Card className="p-8">
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold">
-                    Key Benefits
-                  </h3>
+                  <h3 className="text-2xl font-bold">Key Benefits</h3>
                   <div className="grid gap-4">
                     <div className="flex items-start space-x-4">
                       <div className="rounded-full bg-primary/10 p-3">
@@ -299,9 +283,9 @@ export default function Home() {
         </AnimatedSection>
 
         {/* Community Section */}
-        <AnimatedSection className="py-24 bg-white">
+        <AnimatedSection className="bg-white py-24">
           <div className="container mx-auto max-w-7xl px-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12">
+            <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               <GradientText>Community Made</GradientText>
             </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -313,7 +297,7 @@ export default function Home() {
                       alt="Community Chat"
                       width={400}
                       height={300}
-                      className="object-cover rounded-lg"
+                      className="rounded-lg object-cover"
                     />
                     <h3 className="text-xl font-bold">Community Chat</h3>
                     <p className="text-sm text-muted-foreground">
@@ -331,7 +315,7 @@ export default function Home() {
                       alt="GitHub"
                       width={400}
                       height={300}
-                      className="object-cover rounded-lg"
+                      className="rounded-lg object-cover"
                     />
                     <h3 className="text-xl font-bold">GitHub</h3>
                     <p className="text-sm text-muted-foreground">
@@ -349,25 +333,27 @@ export default function Home() {
                       alt="X (Twitter)"
                       width={400}
                       height={300}
-                      className="object-cover rounded-lg"
+                      className="rounded-lg object-cover"
                     />
                     <h3 className="text-xl font-bold">X (Twitter)</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Follow us for the latest updates and announcements.
-                    </p>
+                    <p className="text-sm text-muted-foreground">Follow us for the latest updates and announcements.</p>
                   </div>
                 </Link>
               </Card>
 
               <Card className="group relative overflow-hidden p-6">
-                <Link href="https://debank.com/profile/0xddc23d34ea2f6920d15995607d00def9478ded6d" target="_blank" className="block">
+                <Link
+                  href="https://debank.com/profile/0xddc23d34ea2f6920d15995607d00def9478ded6d"
+                  target="_blank"
+                  className="block"
+                >
                   <div className="flex flex-col space-y-4">
                     <Image
                       src="/aistr5.jpeg"
                       alt="Portfolio Assets"
                       width={400}
                       height={300}
-                      className="object-cover rounded-lg"
+                      className="rounded-lg object-cover"
                     />
                     <h3 className="text-xl font-bold">Portfolio</h3>
                     <p className="text-sm text-muted-foreground">
@@ -381,13 +367,13 @@ export default function Home() {
         </AnimatedSection>
 
         {/* CTA Section */}
-        <AnimatedSection className="py-24 pb-36 bg-white">
+        <AnimatedSection className="bg-white py-24 pb-36">
           <div className="container relative mx-auto max-w-7xl px-4 text-center">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+            <div className="mx-auto max-w-2xl">
+              <h2 className="mb-4 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 <GradientText>Ready to Join?</GradientText>
               </h2>
-              <p className="text-muted-foreground mb-8 md:text-xl">
+              <p className="mb-8 text-muted-foreground md:text-xl">
                 Join our mission to accumulate cbBTC through the power of AI.
               </p>
               <div className="flex justify-center gap-4">
@@ -408,23 +394,33 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t py-12 bg-white">
+      <footer className="border-t bg-white py-12">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center gap-8">
               <Image src="/aicrostrategy.png" alt="AicroStrategy Logo" width={140} height={28} />
-              <div className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} AicroStrategy
-              </div>
+              <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} AicroStrategy</div>
             </div>
             <div className="flex items-center gap-6">
-              <Link href="https://t.me/aicrostrategy_dao" className="text-muted-foreground hover:text-primary" target="_blank">
+              <Link
+                href="https://t.me/aicrostrategy_dao"
+                className="text-muted-foreground hover:text-primary"
+                target="_blank"
+              >
                 Telegram
               </Link>
-              <Link href="https://x.com/AicroStrategy" className="text-muted-foreground hover:text-primary" target="_blank">
+              <Link
+                href="https://x.com/AicroStrategy"
+                className="text-muted-foreground hover:text-primary"
+                target="_blank"
+              >
                 Twitter
               </Link>
-              <Link href="https://github.com/aicrostrategy" className="text-muted-foreground hover:text-primary" target="_blank">
+              <Link
+                href="https://github.com/aicrostrategy"
+                className="text-muted-foreground hover:text-primary"
+                target="_blank"
+              >
                 GitHub
               </Link>
             </div>
@@ -434,4 +430,3 @@ export default function Home() {
     </div>
   )
 }
-

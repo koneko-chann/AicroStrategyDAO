@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+
 import { GradientText } from '@/components/gradient-text'
-import { Sparkle } from 'lucide-react'
 
 export function LoadingScreen() {
   const [show, setShow] = useState(true)
@@ -23,19 +23,21 @@ export function LoadingScreen() {
   if (!show) return null
 
   return (
-    <div className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black transition-opacity duration-800 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-      <div className="flex flex-col items-center gap-8 relative">
+    <div
+      className={`duration-800 fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity ease-in-out dark:bg-black ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+    >
+      <div className="relative flex flex-col items-center gap-8">
         {/* Animated lines with glow effect */}
-        <div className="absolute inset-0 flex justify-around -rotate-12 opacity-20 blur-[0.5px]">
+        <div className="absolute inset-0 flex -rotate-12 justify-around opacity-20 blur-[0.5px]">
           {[...Array(7)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="w-[1px] bg-gradient-to-b from-transparent via-[#df1f21] to-transparent"
               style={{
                 height: '160%',
                 transform: `translateY(${-50 + i * 15}%)`,
                 animation: `slideUp ${4 + i * 0.3}s linear infinite`,
-                opacity: 0.7 - (i * 0.1)
+                opacity: 0.7 - i * 0.1
               }}
             />
           ))}
@@ -44,7 +46,7 @@ export function LoadingScreen() {
         {/* Main content */}
         <div className="flex flex-col items-center gap-8">
           {/* Logo or text with subtle shadow */}
-          <h1 className="relative z-10 text-3xl md:text-5xl font-bold typewriter drop-shadow-sm">
+          <h1 className="typewriter relative z-10 text-3xl font-bold drop-shadow-sm md:text-5xl">
             <GradientText>Vires in Numeris</GradientText>
           </h1>
 
@@ -59,4 +61,4 @@ export function LoadingScreen() {
       </div>
     </div>
   )
-} 
+}

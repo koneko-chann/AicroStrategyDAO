@@ -14,32 +14,32 @@ export function HoverCard({ children }: { children: React.ReactNode }) {
     const y = e.clientY - rect.top
     const centerX = rect.width / 2
     const centerY = rect.height / 2
-    const rotateX = (y - centerY) / 10
-    const rotateY = (centerX - x) / 10
+    const newRotateX = (y - centerY) / 10
+    const newRotateY = (centerX - x) / 10
 
-    setRotateX(rotateX)
-    setRotateY(rotateY)
+    setRotateX(newRotateX)
+    setRotateY(newRotateY)
   }
 
   return (
     <motion.div
-      className="relative p-6 rounded-xl bg-white shadow-lg"
+      className="relative rounded-xl bg-white p-6 shadow-lg"
       animate={{
         rotateX,
-        rotateY,
+        rotateY
       }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
         setRotateX(0)
         setRotateY(0)
       }}
       style={{
-        transformStyle: "preserve-3d",
-        perspective: "1000px"
+        transformStyle: 'preserve-3d',
+        perspective: '1000px'
       }}
     >
       {children}
     </motion.div>
   )
-} 
+}
