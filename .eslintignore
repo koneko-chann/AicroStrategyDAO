@@ -1,0 +1,4 @@
+# Uncheck config file
+.eslintrc.js
+*.config.js
+*.config.ts
