@@ -2,11 +2,10 @@ import { ArrowRight, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { AnimatedSection } from '../animated-section'
 import { GradientText } from '../gradient-text'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
-
-import { AnimatedSection } from './animated-section'
 
 export default function HeroSection() {
   return (

@@ -1,9 +1,11 @@
-import Image from 'next/image'
-import CardWrapper from './card-wrapper'
-import Link from 'next/link'
 import { SendIcon } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+
 import { cn } from '@/lib/utils'
+
+import CardWrapper from './card-wrapper'
 
 type DetailItemProps = {
   label: string

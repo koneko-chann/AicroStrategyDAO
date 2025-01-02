@@ -1,14 +1,6 @@
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow
-} from '@/components/ui/table'
 import Image from 'next/image'
+
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 const data = [
   {
@@ -27,6 +19,27 @@ const data = [
   },
   {
     token: 'INV003',
+    image: '/aistr.jpeg',
+    balance: 'Unpaid',
+    price: '$350.00',
+    totalValue: 'Bank Transfer'
+  },
+  {
+    token: 'FDREAX',
+    image: '/aistr.jpeg',
+    balance: '20000000.0000',
+    price: '$0.01',
+    totalValue: '$240400.00'
+  },
+  {
+    token: 'INV00Y',
+    image: '/aistr.jpeg',
+    balance: 'Pending',
+    price: '$150.00',
+    totalValue: 'PayPal'
+  },
+  {
+    token: 'INV00Z',
     image: '/aistr.jpeg',
     balance: 'Unpaid',
     price: '$350.00',

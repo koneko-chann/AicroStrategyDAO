@@ -1,3 +1,4 @@
+import { AnimatedSection } from '@/components/animated-section'
 import { AssetsTable } from '@/components/stats/assets-table'
 import CoinData from '@/components/stats/coin-data'
 import CoinDetailSection from '@/components/stats/coin-detail-section'
@@ -6,13 +7,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 export default function StatsPage() {
   return (
     <main className="mx-auto max-w-7xl space-y-6 px-4">
-      <div className="flex gap-6">
+      <AnimatedSection className="flex gap-6">
         <CoinDetailSection />
 
         <CoinData />
-      </div>
+      </AnimatedSection>
 
-      <div>
+      <AnimatedSection>
         <Tabs defaultValue="trades" className="w-full">
           <TabsList>
             <TabsTrigger value="trades" className="font-me text-base">
@@ -36,7 +37,7 @@ export default function StatsPage() {
             <AssetsTable />
           </TabsContent>
         </Tabs>
-      </div>
+      </AnimatedSection>
     </main>
   )
 }

@@ -1,9 +1,8 @@
 import Link from 'next/link'
 
+import { AnimatedSection } from '../animated-section'
 import { GradientText } from '../gradient-text'
 import { Button } from '../ui/button'
-
-import { AnimatedSection } from './animated-section'
 
 export default function CTASection() {
   return (

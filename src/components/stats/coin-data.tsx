@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import CardWrapper from './card-wrapper'
 import React from 'react'
-import { Check, Copy } from 'lucide-react'
+
+import CardWrapper from './card-wrapper'
 import CoinDataItem from './coin-data-item'
 
 export default function CoinData() {

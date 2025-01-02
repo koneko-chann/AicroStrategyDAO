@@ -1,7 +1,6 @@
+import { AnimatedSection } from '../animated-section'
 import { GradientText } from '../gradient-text'
 import { Card } from '../ui/card'
-
-import { AnimatedSection } from './animated-section'
 
 export default function FeaturesSection() {
   return (
